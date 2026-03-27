@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <title>Dashboard de Produtividade</title>
+  </head>
+  <body>
+    <!-- Cabeçalho da página -->
+    <header class="header">
+      <h1 class="title">ProduZip</h1>
+      <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
+    <!-- Seção de filtros -->
+    <aside class="sidebar">
+      <nav>
+        <button id="filter-toggle">Todas</button>
+        <button id="filter-completed">Concluídas</button>
+        <button id="filter-pending">Pendentes</button>
+      </nav>
+    </aside>
+    <!-- Seção principal de conteúdo -->
+    <main class="main">
+      <div class="new-task">
+        <input type="text" placeholder="Adicionar nova tarefa..." />
+        <button id="add-task">Adicionar</button>
+      </div>
+      <ul class="task-list"></ul>
+      <!-- Contador de tarefas -->
+      <div class="counter"><span id="task-counter">Tarefas: 0</span></div>
+    </main>
+    <!-- Rodapé da página -->
+    <footer class="footer">
+      <p>&copy; 2026 ProduZip. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Link para o arquivo JavaScript -->
+    <script src="/assets/script.js"></script>
+  </body>
+</html>
