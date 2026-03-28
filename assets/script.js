@@ -79,3 +79,40 @@ function atualizarContador() {
   document.getElementById("task-counter").textContent =
     `Tarefas Pendentes: ${pendentes}`;
 }
+
+// filtros de tarefas
+document.getElementById("filter-all").addEventListener("click", () => {
+  document.querySelectorAll(".task-list li").forEach((li) => {
+    li.style.display = "flex";
+  });
+});
+
+document.getElementById("filter-pending").addEventListener("click", () => {
+  document.querySelectorAll(".task-list li").forEach((li) => {
+    if (li.querySelector("span").classList.contains("concluded")) {
+      li.style.display = "none";
+    } else {
+      li.style.display = "flex";
+    }
+  });
+});
+
+document.getElementById("filter-concluded").addEventListener("click", () => {
+  document.querySelectorAll(".task-list li").forEach((li) => {
+    if (!li.querySelector("span").classList.contains("concluded")) {
+      li.style.display = "none";
+    } else {
+      li.style.display = "flex";
+    }
+  });
+});
+
+// adicionar tarefa com Enter
+function addEnter(e) {
+  if (e.key === "Enter") {
+    addTaskBtn.click();
+  }
+}
+document
+  .querySelector(".new-task input")
+  .addEventListener("keypress", addEnter);
